@@ -23,14 +23,14 @@ export const home = () => {
   header.append(logoHome, profileImage, logout);
   commentContainer.append(writeComment, shareButton);
 
-  logout.addEventListener('click', function(){
+  logout.addEventListener('click', () => {
     onNavigate('/');
   });
 
-  shareButton.addEventListener('click', function(){
+  shareButton.addEventListener('click', () => {
     commentSharedContainer.appendChild(comment.textContent = 'Hola!');
   });
-  
-  divContainer.append(header,commentContainer)
+
+  divContainer.append(header, commentContainer);
   return divContainer;
 };
