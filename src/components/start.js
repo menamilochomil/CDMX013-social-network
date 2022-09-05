@@ -12,12 +12,12 @@ export const start = () => {
   const imgWomenInTech = document.createElement('img');
   const footer = document.createElement('footer');
 
-  logo.src = '../imgs/logo.png';
-  profileIcon.src = '../imgs/profile.png';
+  logo.src = 'imgs/logo.png';
+  profileIcon.src = 'imgs/profile.png';
   loginButton.textContent = 'Login';
   signUpButton.textContent = 'Sign Up';
   slogan.textContent = 'Empowering Women in Technology';
-  imgWomenInTech.src = '../imgs/imageTech.png';
+  imgWomenInTech.src = 'imgs/imageTech.png';
   footer.textContent = '2022';
 
   divContainer.setAttribute('class', 'container');
@@ -36,11 +36,11 @@ export const start = () => {
   header.append(logo, profileIcon, loginButton, signUpButton);
   main.append(slogan, imgWomenInTech);
   loginButton.addEventListener('click', () => {
-    onNavigate('/login');
+    onNavigate('/CDMX013-social-network/login');
   });
 
   signUpButton.addEventListener('click', () => {
-    onNavigate('/signUp');
+    onNavigate('/CDMX013-social-network/signUp');
   });
 
   divContainer.append(header, main, footer);

@@ -12,9 +12,9 @@ export const home = () => {
   const commentSharedContainer = document.createElement('section');
   const comment = document.createElement('p');
 
-  logoHome.src = '../imgs/logo2.png';
+  logoHome.src = 'imgs/logo2.png';
   logoHome.setAttribute('id', 'logo-home');
-  profileImage.src = '../imgs/profile.png';
+  profileImage.src = 'imgs/profile.png';
   profileImage.setAttribute('class', 'profile');
   logout.textContent = 'Log out';
   writeComment.setAttribute('placeholder', 'Share something with the community...');
@@ -23,8 +23,8 @@ export const home = () => {
   header.append(logoHome, profileImage, logout);
   commentContainer.append(writeComment, shareButton);
 
-  logout.addEventListener('click', () => {
-    onNavigate('/');
+  logout.addEventListener('click', function(){
+    onNavigate('/CDMX013-social-network/');
   });
 
   shareButton.addEventListener('click', () => {

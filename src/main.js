@@ -7,10 +7,10 @@ import { home } from './components/home.js';
 const root = document.getElementById('root');
 
 const routes = {
-  '/': start,
-  '/login': login,
-  '/signUp': signUp,
-  '/home': home,
+  '/CDMX013-social-network/': start,
+  '/CDMX013-social-network/login': login,
+  '/CDMX013-social-network/signUp': signUp,
+  '/CDMX013-social-network/home': home,
 };
 
 export const onNavigate = (pathname) => {
