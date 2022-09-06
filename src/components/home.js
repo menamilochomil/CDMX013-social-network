@@ -1,4 +1,4 @@
-import { onNavigate } from '../main.js';
+import { onNavigate } from '../../main.js';
 
 export const home = () => {
   const divContainer = document.createElement('div');
@@ -12,9 +12,9 @@ export const home = () => {
   const commentSharedContainer = document.createElement('section');
   const comment = document.createElement('p');
 
-  logoHome.src = 'imgs/logo2.png';
+  logoHome.src = 'src/imgs/logo2.png';
   logoHome.setAttribute('id', 'logo-home');
-  profileImage.src = 'imgs/profile.png';
+  profileImage.src = 'src/imgs/profile.png';
   profileImage.setAttribute('class', 'profile');
   logout.textContent = 'Log out';
   writeComment.setAttribute('placeholder', 'Share something with the community...');
