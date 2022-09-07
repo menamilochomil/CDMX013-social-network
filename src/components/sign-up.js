@@ -47,11 +47,11 @@ export const signUp = () => {
   divInputs.append(labelEmail, boxEmail, labelPassword, boxPassword, labelConfirm, boxConfirmPassword, signUpButton, pMessage);
 
   sectionOr.src = 'src/imgs/sectionOr.png';
-  signUpTwitter.src = 'src/imgs/Twitter.png';
+  signUpTwitter.src = 'src/imgs/twitter.png';
   signUpTwitter.setAttribute('class', 'signUpIcon');
-  signUpGitHub.src = 'src/imgs/Github.png';
+  signUpGitHub.src = 'src/imgs/github.png';
   signUpGitHub.setAttribute('class', 'signUpIcon');
-  signUpGoogle.src = 'src/imgs/Google.png';
+  signUpGoogle.src = 'src/imgs/google.png';
   signUpGoogle.setAttribute('class', 'signUpIcon');
   footer.textContent = '2022';
 
