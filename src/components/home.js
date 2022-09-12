@@ -5,25 +5,28 @@ export const home = () => {
   const header = document.createElement('header');
   const logoHome = document.createElement('img');
   const profileImage = document.createElement('img');
-  const logout = document.createElement('a');
+  const logout = document.createElement('button');
   const commentContainer = document.createElement('section');
   const writeComment = document.createElement('textarea');
   const shareButton = document.createElement('button');
   const commentSharedContainer = document.createElement('section');
   const comment = document.createElement('p');
 
+  header.setAttribute('id', 'header');
   logoHome.src = 'src/imgs/logo2.png';
   logoHome.setAttribute('id', 'logo-home');
   profileImage.src = 'src/imgs/profile.png';
-  profileImage.setAttribute('class', 'profile');
+  profileImage.setAttribute('id', 'profile');
   logout.textContent = 'Log out';
+  logout.setAttribute('id', 'logout');
   writeComment.setAttribute('placeholder', 'Share something with the community...');
   shareButton.textContent = 'Share';
+  shareButton.setAttribute('id', 'share');
 
   header.append(logoHome, profileImage, logout);
   commentContainer.append(writeComment, shareButton);
 
-  logout.addEventListener('click', function(){
+  logout.addEventListener('click', () => {
     onNavigate('/CDMX013-social-network/');
   });
 

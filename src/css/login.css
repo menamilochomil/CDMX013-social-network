@@ -1,9 +1,9 @@
 .text, #text {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
-    margin-top: 111px;
-    margin-bottom: 53px;
-   
+    margin-top: 88px;
+    margin-bottom: 27px;
+    font-weight: 900;
 }
 
 .container {
@@ -15,9 +15,9 @@
 
 .logoTech {
     display: flex;
-    width: 201px;
-    height: 50px;
-    margin-top: 44px;
+    width: 225px;
+    height: 55.95px;
+    margin-top: 54px;
 }
 
 .containerInputs{
@@ -27,20 +27,25 @@
     align-items: flex-end;
 }
 .inputs{
-    width: 310px;
-    height: 52px;
+    width: 303px;
+    height: 46px;
     border-radius: 12px;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .purpleButton{
-    width: 87px;
-    height: 34px;
-    border-radius: 5px;
+    width: 303px;
+    height: 53px;
+    border-radius: 25px;
     background-color: #4A26AA;
-    margin-bottom: 10px;
     color: white;
+    font-size: 20px;
+}
+
+.purpleButton:hover {
+    box-shadow: 0.063rem 0.313rem 0.625rem #21244D;
+    cursor: pointer;
 }
 
 #pAccount{
@@ -49,6 +54,7 @@
 
 #divAccount{
     display: flex;
+    margin-top: 24px;
 }
 
 #signUpButton{

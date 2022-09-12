@@ -20,23 +20,9 @@
 }
 
 #logo {
-    width: 12.5625rem;
-    height: 3.125rem;
-    margin: 1rem;
-}
-
-#iconprofile     {
-    width: 3.125rem;
-    margin: 1rem 0 1.3rem 1rem;
-}
-
-#login-btn,
-#sign-up-btn {
-    border: none;
-    border-bottom: 0.2rem;
-    border-color: black;
-    background: none;
-    margin: 1rem 0.3rem 1rem 0;
+    width: 14.063rem;
+    height: 3.498rem;
+    margin: 2.938rem;
 }
 
 .main{
@@ -44,23 +30,52 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    gap:2rem;
-    margin-top: 10rem;
+}
+
+#women-tech {
+    display: flex;
+    width: 24.438rem;
+    height: 26.25rem;
 }
 
 #slogan {
     font-size: 1.25rem;
-    margin: 0;
+    font-weight: bold;
+    margin: 2rem 0;
     width: 20rem;
     color: #E350A8;
     text-align: center;
 }
 
-#women-tech {
-    display: flex;
-    width: 23.8125rem;
-    margin: 0;
-    height: 26.25rem;
+.btns {
+    width: 21.625rem;
+    height: 3.313rem;
+    border: none;
+    border-radius: 1.563rem;
+    margin: 1rem 0.3rem 1rem 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0.063rem 0.313rem 0.625rem #473f4985;
+    cursor: pointer;
+}
+
+.btns:hover,
+.btns:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+.btns:hover {
+    box-shadow: 0.063rem 0.313rem 0.625rem #21244D;
+}
+
+#login-btn{
+    background: #9543A7;
+}
+
+#sign-up-btn{
+    background: #E350A8;
 }
 
 footer {

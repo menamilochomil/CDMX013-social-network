@@ -5,7 +5,6 @@ export const start = () => {
   const header = document.createElement('header');
   const main = document.createElement('main');
   const logo = document.createElement('img');
-  const profileIcon = document.createElement('img');
   const loginButton = document.createElement('button');
   const signUpButton = document.createElement('button');
   const slogan = document.createElement('p');
@@ -13,7 +12,6 @@ export const start = () => {
   const footer = document.createElement('footer');
 
   logo.src = 'src/imgs/logo.png';
-  profileIcon.src = 'src/imgs/profile.png';
   loginButton.textContent = 'Login';
   signUpButton.textContent = 'Sign Up';
   slogan.textContent = 'Empowering Women in Technology';
@@ -24,17 +22,15 @@ export const start = () => {
   header.setAttribute('class', 'header');
   main.setAttribute('class', 'main');
   logo.setAttribute('id', 'logo');
-  profileIcon.setAttribute('id', 'iconprofile');
   loginButton.setAttribute('id', 'login-btn');
   signUpButton.setAttribute('id', 'sign-up-btn');
-  profileIcon.setAttribute('class', 'btns');
   loginButton.setAttribute('class', 'btns');
   signUpButton.setAttribute('class', 'btns');
   slogan.setAttribute('id', 'slogan');
   imgWomenInTech.setAttribute('id', 'women-tech');
 
-  header.append(logo, profileIcon, loginButton, signUpButton);
-  main.append(slogan, imgWomenInTech);
+  header.append(logo);
+  main.append(imgWomenInTech, slogan, loginButton, signUpButton);
   loginButton.addEventListener('click', () => {
     onNavigate('/CDMX013-social-network/login');
   });

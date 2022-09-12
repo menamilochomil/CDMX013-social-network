@@ -35,7 +35,7 @@ export const login = () => {
 
   pAccount.textContent = ' Do not you have an account yet? Please,  ';
   pAccount.setAttribute('id', 'pAccount');
-  signUpButton.textContent = 'Sign Up';
+  signUpButton.textContent = 'Sign up here ';
   divAccount.append(pAccount, signUpButton);
   divAccount.setAttribute('id', 'divAccount');
   signUpButton.setAttribute('id', 'signUpButton');
@@ -66,10 +66,6 @@ export const login = () => {
     divInputs,
     divAccount,
     footer,
-    sectionOr,
-    loginTwitter,
-    loginGitHub,
-    loginGoogle,
   );
 
   divContainer.setAttribute('class', 'container');

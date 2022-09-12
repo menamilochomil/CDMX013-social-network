@@ -7,11 +7,18 @@
     margin: 23px 0 37px;
 }
 
-.nameslabel{
-    align-self: start;
-    font-size: 15px;
-}
-
 #text{
     margin-top: 70px;  
+}
+
+.errorMessage{
+    color: red;
+    align-self: center;
+    margin: 0 0 10px;
+}
+
+#congrats{
+    color: green;
+    align-self: center;
+    margin: 0 0 10px;
 }
