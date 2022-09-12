@@ -1,9 +1,9 @@
 // Este es el punto de entrada de tu aplicacion
+import { start } from './src/components/start.js';
+import { login } from './src/components/login.js';
+import { signUp } from './src/components/sign-up.js';
 import { home } from './src/components/home.js';
 import { check } from './src/components/successCreateAccount.js';
-import { start } from './src/components/start.js';
-import { signUp } from './src/components/sign-up.js';
-import { login } from './src/components/login.js';
 
 const root = document.getElementById('root');
 
