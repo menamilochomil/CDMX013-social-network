@@ -1,4 +1,4 @@
-import { onNavigate } from '../main.js';
+import { onNavigate } from '../../main.js';
 
 export const home = () => {
   const divContainer = document.createElement('div');
@@ -12,22 +12,22 @@ export const home = () => {
   const commentSharedContainer = document.createElement('section');
   const comment = document.createElement('p');
 
-  header.setAttribute("id", "header");
-  logoHome.src = '../imgs/logo2.png';
+  header.setAttribute('id', 'header');
+  logoHome.src = 'src/imgs/logo2.png';
   logoHome.setAttribute('id', 'logo-home');
-  profileImage.src = '../imgs/profile.png';
+  profileImage.src = 'src/imgs/profile.png';
   profileImage.setAttribute('id', 'profile');
   logout.textContent = 'Log out';
-  logout.setAttribute("id", "logout");
-  writeComment.setAttribute('placeholder', 'Share something with the community...');
+  logout.setAttribute('id', 'logout');
+  writeComment.setAttribute('placeholder', 'Share something with the communitysrc.');
   shareButton.textContent = 'Share';
-  shareButton.setAttribute("id", "share");
+  shareButton.setAttribute('id', 'share');
 
   header.append(logoHome, profileImage, logout);
   commentContainer.append(writeComment, shareButton);
 
   logout.addEventListener('click', () => {
-    onNavigate('/');
+    onNavigate('/CDMX013-social-network/');
   });
 
   shareButton.addEventListener('click', () => {

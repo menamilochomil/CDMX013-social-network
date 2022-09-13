@@ -1,4 +1,4 @@
-import { onNavigate } from '../main.js';
+import { onNavigate } from '../../main.js';
 
 export const login = () => {
   const divContainer = document.createElement('div');
@@ -17,7 +17,7 @@ export const login = () => {
   const loginGoogle = document.createElement('img');
   const footer = document.createElement('footer');
 
-  logo.src = '../imgs/logo.png';
+  logo.src = 'src/imgs/logo.png';
   logo.classList.add('logoTech');
   divInputs.setAttribute('class', 'containerInputs');
   p.textContent = 'Log in';
@@ -39,25 +39,25 @@ export const login = () => {
   divAccount.append(pAccount, signUpButton);
   divAccount.setAttribute('id', 'divAccount');
   signUpButton.setAttribute('id', 'signUpButton');
-  sectionOr.src = '../imgs/sectionOr.png';
-  loginTwitter.src = '../imgs/loginTwitter.png';
+  sectionOr.src = 'src/imgs/sectionOr.png';
+  loginTwitter.src = 'src/imgs/loginTwitter.png';
   loginTwitter.setAttribute('class', 'loginIcon');
-  loginGitHub.src = '../imgs/loginGithub.png';
+  loginGitHub.src = 'src/imgs/loginGithub.png';
   loginGitHub.setAttribute('class', 'loginIcon');
-  loginGoogle.src = '../imgs/loginGoogle.png';
+  loginGoogle.src = 'src/imgs/loginGoogle.png';
   loginGoogle.setAttribute('class', 'loginIcon');
   footer.textContent = '2022';
 
   logo.addEventListener('click', () => {
-    onNavigate('/');
+    onNavigate('/CDMX013-social-network/');
   });
 
   loginButton.addEventListener('click', () => {
-    onNavigate('/home');
+    onNavigate('/CDMX013-social-network/home');
   });
 
   signUpButton.addEventListener('click', () => {
-    onNavigate('/signUp');
+    onNavigate('/CDMX013-social-network/signUp');
   });
 
   divContainer.append(
