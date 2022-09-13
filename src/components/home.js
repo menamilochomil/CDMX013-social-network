@@ -19,7 +19,7 @@ export const home = () => {
   profileImage.setAttribute('id', 'profile');
   logout.textContent = 'Log out';
   logout.setAttribute('id', 'logout');
-  writeComment.setAttribute('placeholder', 'Share something with the communitysrc.');
+  writeComment.setAttribute('placeholder', 'Share something with the community...');
   shareButton.textContent = 'Share';
   shareButton.setAttribute('id', 'share');
 

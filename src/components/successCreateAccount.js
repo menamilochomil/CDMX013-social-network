@@ -1,4 +1,4 @@
-import { onNavigate } from '../main.js';
+import { onNavigate } from '../../main.js';
 
 export const check = () => {
   const div = document.createElement('div');
@@ -19,7 +19,7 @@ export const check = () => {
   div.append(button);
 
   button.addEventListener('click', () => {
-    onNavigate('/login');
+    onNavigate('/CDMX013-social-network/login');
   });
   return div;
 };
