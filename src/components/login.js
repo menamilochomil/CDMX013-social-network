@@ -17,6 +17,7 @@ export const login = () => {
   const loginGitHub = document.createElement('img');
   const loginGoogle = document.createElement('img');
   const footer = document.createElement('footer');
+  const para = document.createElement('p');
 
   logo.src = '../imgs/logo.png';
   logo.classList.add('logoTech');
@@ -31,8 +32,9 @@ export const login = () => {
   boxPassword.setAttribute('class', 'inputs');
   loginButton.textContent = 'Log in';
   loginButton.setAttribute('class', 'purpleButton');
+  para.setAttribute('class', 'errorMessage');
 
-  divInputs.append(boxEmail, boxPassword, loginButton);
+  divInputs.append(boxEmail, boxPassword, para, loginButton);
 
   pAccount.textContent = ' Do not you have an account yet? Please,  ';
   pAccount.setAttribute('id', 'pAccount');
@@ -51,14 +53,12 @@ export const login = () => {
 
   const firebaseLogIn = async () => {
     const loginEmail = boxEmail.value;
-    //loginEmail.replace('/" "/g', ""); 
-    console.log(loginEmail);
     const loginPassword = boxPassword.value;
 
-    try{
-      logIn(auth, loginEmail,loginPassword);
+    try {
+      logIn(auth, loginEmail, loginPassword);
       onNavigate('/home');
-    }catch(error){
+    } catch (error) {
       if (error.code === 'auth/user-not-found') {
         para.style.display = 'block';
         para.style.opacity = '1';
@@ -86,7 +86,7 @@ export const login = () => {
       }
     }
   };
-  
+
   loginButton.addEventListener('click', firebaseLogIn);
 
   logo.addEventListener('click', () => {
