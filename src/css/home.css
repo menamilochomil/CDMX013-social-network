@@ -1,3 +1,12 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 420px ;
+}
+
 #header{
     display: flex;
     justify-content: flex-start;
@@ -8,7 +17,7 @@
     height: 17%;
     margin-left: 1rem;
     align-self: center;
-    margin-right: 50%;
+    margin-right: 187px;
 }
 #profile     {
     width: 3.125rem;
