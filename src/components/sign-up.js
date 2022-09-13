@@ -56,13 +56,13 @@ export const signUp = () => {
   const auth = getAuth(app);
 
   const createAccount = async () => {
-    const loginEmail = boxEmail.value;
-    const loginPassword = boxPassword.value;
+    const signUpEmail = boxEmail.value;
+    const signUpPassword = boxPassword.value;
     const confirmPasword = boxConfirmPassword.value;
 
     try {
-      if (loginPassword !== confirmPasword) throw Error('The password does not match');
-      const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword, confirmPasword);
+      if (signUpPassword !== confirmPasword) throw Error('The password does not match');
+      const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword, confirmPasword);
       // Signed in
       const user = userCredential.user;
       paraError.innerHTML = '';
@@ -89,8 +89,13 @@ export const signUp = () => {
         paraError.style.opacity = '1';
         paraError.innerHTML = 'Your password should be at least 6 characters';
       }
+      if (error.code === 'auth/network-request-failed') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Connection failed';
+      }
 
-      if (loginEmail === '' && loginPassword === '' && confirmPasword === '') {
+      if (signUpEmail === '' && signUpPassword === '' && confirmPasword === '') {
         paraError.innerHTML = 'Please, fill all the fields';
       } else if (boxEmail.value === '') {
         paraError.innerHTML = 'Please write an e-mail';
@@ -98,10 +103,6 @@ export const signUp = () => {
         paraError.innerHTML = 'Please write a password';
       } else if (boxConfirmPassword.value === '') {
         paraError.innerHTML = 'Please confirm your password';
-
-        // const errorCode = error.code;
-        // const errorMessage = error.message;
-        // ..
       }
     }
   };

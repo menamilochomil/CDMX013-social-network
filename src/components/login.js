@@ -1,4 +1,6 @@
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { onNavigate } from '../../main.js';
+import { app } from '../lib/firebase.js';
 
 export const login = () => {
   const divContainer = document.createElement('div');
@@ -16,6 +18,7 @@ export const login = () => {
   const loginGitHub = document.createElement('img');
   const loginGoogle = document.createElement('img');
   const footer = document.createElement('footer');
+  const paraError = document.createElement('p');
 
   logo.src = 'src/imgs/logo.png';
   logo.classList.add('logoTech');
@@ -31,7 +34,7 @@ export const login = () => {
   loginButton.textContent = 'Log in';
   loginButton.setAttribute('class', 'purpleButton');
 
-  divInputs.append(boxEmail, boxPassword, loginButton);
+  divInputs.append(boxEmail, boxPassword, paraError, loginButton);
 
   pAccount.textContent = ' Do not you have an account yet? Please,  ';
   pAccount.setAttribute('id', 'pAccount');
@@ -47,13 +50,51 @@ export const login = () => {
   loginGoogle.src = 'src/imgs/loginGoogle.png';
   loginGoogle.setAttribute('class', 'loginIcon');
   footer.textContent = '2022';
+  paraError.setAttribute('class', 'errorMessage');
+
+  const auth = getAuth(app);
+
+  const firebaseLogIn = async () => {
+    const loginEmail = boxEmail.value;
+    const loginPassword = boxPassword.value;
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      const user = userCredential.user;
+      onNavigate('/CDMX013-social-network/home');
+    } catch (error) {
+      if (error.code === 'auth/user-not-found') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'You do not have an account yet';
+      }
+      if (error.code === 'auth/internal-error') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Please, write your password';
+      }
+      if (error.code === 'auth/invalid-email') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your email is incorrect';
+      }
+      if (error.code === 'auth/wrong-password') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your password is incorrect';
+      }
+      if (error.code === 'auth/user-disabled') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your account is disabled';
+      }
+    }
+  };
+
+  loginButton.addEventListener('click', firebaseLogIn);
 
   logo.addEventListener('click', () => {
     onNavigate('/CDMX013-social-network/');
-  });
-
-  loginButton.addEventListener('click', () => {
-    onNavigate('/CDMX013-social-network/home');
   });
 
   signUpButton.addEventListener('click', () => {
