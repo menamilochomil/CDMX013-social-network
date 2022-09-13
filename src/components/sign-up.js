@@ -53,14 +53,16 @@ export const signUp = () => {
   paraError.setAttribute('class', 'errorMessage');
   paraCongrats.setAttribute('id', 'congrats');
 
+  const auth = getAuth(app);
+
   const createAccount = async () => {
     const signUpEmail = boxEmail.value;
     const signUpPassword = boxPassword.value;
     const confirmPasword = boxConfirmPassword.value;
 
     try {
-      if (loginPassword !== confirmPasword) throw Error('The password does not match');
-      const userCredential = await createUserWithEmailAndPassword(auth, loginEmail, loginPassword, confirmPasword);
+      if (signUpPassword !== confirmPasword) throw Error('The password does not match');
+      const userCredential = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword, confirmPasword);
       // Signed in
       const user = userCredential.user;
       paraError.innerHTML = '';

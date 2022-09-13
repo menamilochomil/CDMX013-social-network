@@ -2,8 +2,6 @@ import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/fir
 import { onNavigate } from '../../main.js';
 import { app } from '../lib/firebase.js';
 
-export const auth = getAuth(app);
-
 export const login = () => {
   const divContainer = document.createElement('div');
   const logo = document.createElement('img');
@@ -54,12 +52,14 @@ export const login = () => {
   footer.textContent = '2022';
   paraError.setAttribute('class', 'errorMessage');
 
+  const auth = getAuth(app);
+
   const firebaseLogIn = async () => {
     const loginEmail = boxEmail.value;
     const loginPassword = boxPassword.value;
 
     try {
-      await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       const user = userCredential.user;
       onNavigate('/CDMX013-social-network/home');
     } catch (error) {
