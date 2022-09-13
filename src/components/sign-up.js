@@ -1,5 +1,8 @@
+import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+import { app } from '../lib/firebase.js';
 import { onNavigate } from '../main.js';
-import { auth, createAccount } from '../firebase/register.js';
+
+export const auth = getAuth(app);
 
 export const signUp = () => {
   const divContainer = document.createElement('div');
@@ -52,14 +55,14 @@ export const signUp = () => {
   paraError.setAttribute('class', 'errorMessage');
   paraCongrats.setAttribute('id', 'congrats');
 
-  const register = async () => {
+  const createAccount = async () => {
     const signUpEmail = boxEmail.value;
     const signUpPassword = boxPassword.value;
     const confirmPasword = boxConfirmPassword.value;
 
     try {
       if (signUpPassword !== confirmPasword) throw Error('The password does not match');
-      createAccount(auth, signUpEmail, signUpPassword, confirmPasword);
+      await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword, confirmPasword);
       paraError.innerHTML = '';
       function congrats() {
         onNavigate('/check');
@@ -84,6 +87,11 @@ export const signUp = () => {
         paraError.style.opacity = '1';
         paraError.innerHTML = 'Your password should be at least 6 characters';
       }
+      if (error.code === 'auth/network-request-failed') {
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Connection failed';
+      }
 
       if (signUpEmail === '' && signUpPassword === '' && confirmPasword === '') {
         paraError.innerHTML = 'Please, fill all the fields';
@@ -97,7 +105,7 @@ export const signUp = () => {
     }
   };
 
-  signUpButton.addEventListener('click', register);
+  signUpButton.addEventListener('click', createAccount);
 
   logo.addEventListener('click', () => {
     onNavigate('/');

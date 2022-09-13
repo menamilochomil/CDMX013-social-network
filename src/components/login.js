@@ -1,5 +1,8 @@
+import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { onNavigate } from '../main.js';
-import { auth, logIn } from '../firebase/register.js';
+import { app } from '../lib/firebase.js';
+
+export const auth = getAuth(app);
 
 export const login = () => {
   const divContainer = document.createElement('div');
@@ -17,7 +20,7 @@ export const login = () => {
   const loginGitHub = document.createElement('img');
   const loginGoogle = document.createElement('img');
   const footer = document.createElement('footer');
-  const para = document.createElement('p');
+  const paraError = document.createElement('p');
 
   logo.src = '../imgs/logo.png';
   logo.classList.add('logoTech');
@@ -32,9 +35,8 @@ export const login = () => {
   boxPassword.setAttribute('class', 'inputs');
   loginButton.textContent = 'Log in';
   loginButton.setAttribute('class', 'purpleButton');
-  para.setAttribute('class', 'errorMessage');
 
-  divInputs.append(boxEmail, boxPassword, para, loginButton);
+  divInputs.append(boxEmail, boxPassword, paraError, loginButton);
 
   pAccount.textContent = ' Do not you have an account yet? Please,  ';
   pAccount.setAttribute('id', 'pAccount');
@@ -50,39 +52,40 @@ export const login = () => {
   loginGoogle.src = '../imgs/loginGoogle.png';
   loginGoogle.setAttribute('class', 'loginIcon');
   footer.textContent = '2022';
+  paraError.setAttribute('class', 'errorMessage');
 
   const firebaseLogIn = async () => {
     const loginEmail = boxEmail.value;
     const loginPassword = boxPassword.value;
 
     try {
-      logIn(auth, loginEmail, loginPassword);
+      await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       onNavigate('/home');
     } catch (error) {
       if (error.code === 'auth/user-not-found') {
-        para.style.display = 'block';
-        para.style.opacity = '1';
-        para.innerHTML = 'You do not have an account yet';
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'You do not have an account yet';
       }
       if (error.code === 'auth/internal-error') {
-        para.style.display = 'block';
-        para.style.opacity = '1';
-        para.innerHTML = 'Please, write your password';
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Please, write your password';
       }
       if (error.code === 'auth/invalid-email') {
-        para.style.display = 'block';
-        para.style.opacity = '1';
-        para.innerHTML = 'Your email is incorrect';
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your email is incorrect';
       }
       if (error.code === 'auth/wrong-password') {
-        para.style.display = 'block';
-        para.style.opacity = '1';
-        para.innerHTML = 'Your password is incorrect';
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your password is incorrect';
       }
       if (error.code === 'auth/user-disabled') {
-        para.style.display = 'block';
-        para.style.opacity = '1';
-        para.innerHTML = 'Your account is disabled';
+        paraError.style.display = 'block';
+        paraError.style.opacity = '1';
+        paraError.innerHTML = 'Your account is disabled';
       }
     }
   };
