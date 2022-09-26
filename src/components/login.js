@@ -25,6 +25,7 @@ export const login = () => {
   divInputs.setAttribute('class', 'containerInputs');
   p.textContent = 'Log in';
   p.setAttribute('class', 'text');
+
   boxEmail.setAttribute('type', 'email');
   boxEmail.placeholder = 'email@something.com';
   boxEmail.setAttribute('class', 'inputs');
@@ -36,7 +37,7 @@ export const login = () => {
 
   divInputs.append(boxEmail, boxPassword, paraError, loginButton);
 
-  pAccount.textContent = ' Do not you have an account yet? Please,  ';
+  pAccount.textContent = " Don't have an account yet? Please,  ";
   pAccount.setAttribute('id', 'pAccount');
   signUpButton.textContent = 'Sign up here ';
   divAccount.append(pAccount, signUpButton);
@@ -97,15 +98,22 @@ export const login = () => {
     onNavigate('/CDMX013-social-network/');
   });
 
+  loginGoogle.addEventListener('click', googleAuth);
+
   signUpButton.addEventListener('click', () => {
     onNavigate('/CDMX013-social-network/signUp');
   });
+
+  loginGitHub.addEventListener('click', githubLogin);
 
   divContainer.append(
     logo,
     p,
     divInputs,
     divAccount,
+    sectionOr,
+    loginGoogle,
+    loginGitHub,
     footer,
   );
 
