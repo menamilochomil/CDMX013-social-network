@@ -18,7 +18,7 @@ export const home = () => {
 
   divContainer.setAttribute('id', 'body-home');
   header.setAttribute('id', 'header');
-  logoHome.src = '../imgs/logo2.png';
+  logoHome.src = 'src/imgs/logo2.png';
   logoHome.setAttribute('id', 'logo-home');
   logout.textContent = 'Log out';
   logout.setAttribute('id', 'logout');
@@ -62,7 +62,7 @@ export const home = () => {
       html += `
           <article class="post-content">
           <div class= "container-header-post">
-            <img id= "profile-home" src="../imgs/profile.png" alt="Profile Image">
+            <img id= "profile-home" src="src/imgs/profile.png" alt="Profile Image">
             <h2 id ="header-post">${postData.user}</h2>
             <span id="delete-edit"> ${htmlDelete} </span>
           </div>
@@ -73,7 +73,7 @@ export const home = () => {
             <p>Like</p>
           </span>
           <span class= "icon-container">
-            <img class ="comment-img" src="../imgs/comment.png" alt="Profile Image">
+            <img class ="comment-img" src="src/imgs/comment.png" alt="Profile Image">
             <p>Comment</p>
           </span>
           </div>
