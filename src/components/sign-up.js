@@ -3,8 +3,6 @@ import { onNavigate } from '../../main.js';
 import { app } from '../lib/firebase.js';
 import { githubLogin } from './github.js';
 
-export const auth = getAuth(app);
-
 export const signUp = () => {
   const divContainer = document.createElement('div');
   const logo = document.createElement('img');
@@ -63,6 +61,8 @@ export const signUp = () => {
   footer.textContent = '2022';
   paraError.setAttribute('class', 'errorMessage');
   paraCongrats.setAttribute('id', 'congrats');
+
+  const auth = getAuth(app);
 
   const createAccount = async () => {
     const getName = boxName.value;
