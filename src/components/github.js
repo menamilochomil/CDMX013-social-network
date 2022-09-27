@@ -2,7 +2,7 @@ import {
   getAuth, GithubAuthProvider, signInWithRedirect, getRedirectResult,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { app } from '../lib/firebase.js';
-import { onNavigate } from '../main.js';
+import { onNavigate } from '../../main.js';
 
 const githubProvider = new GithubAuthProvider();
 const auth = getAuth(app);
@@ -14,7 +14,7 @@ export const githubLogin = () => {
       const credential = GithubAuthProvider.credentialFromResult(result);
       if (credential) {
         const token = result.credential.accessToken;
-        onNavigate('/home');
+        onNavigate('/CDMX013-social-network/home');
       }
       const user = result.user;
     })

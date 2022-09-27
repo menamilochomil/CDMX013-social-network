@@ -29,13 +29,13 @@ export const onNavigate = (pathname) => {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    onNavigate('/home')
+    onNavigate('/CDMX013-social-network/home')
     // const displayName = user.displayName;
     // const email = user.email;
     // const photoURL = user.photoURL;
     // const uid = user.uid;
   } else {
-    onNavigate('/');
+    onNavigate('/CDMX013-social-network/');
   }
 });
 
