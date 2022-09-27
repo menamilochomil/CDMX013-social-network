@@ -5,7 +5,7 @@ import { signUp } from './components/sign-up.js';
 import { home } from './components/home.js';
 import { check } from './components/successCreateAccount.js';
 import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
-import { auth } from '../lib/firebase.js';
+import { auth } from './lib/firebase.js';
 
 const root = document.getElementById('root');
 
