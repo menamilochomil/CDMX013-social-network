@@ -56,7 +56,7 @@ export const home = () => {
         htmlDelete = `
           <i class="fa-sharp fa-solid fa-trash" id="${doc.id}"></i>
           <i class="fa-sharp fa-solid fa-pencil"></i>`;
-      } else { 
+      } else {
         htmlDelete = '';
       }
       html += `
@@ -87,7 +87,7 @@ export const home = () => {
 
     deteleTrash.forEach((trash) => {
       trash.addEventListener('click', ({ target: { dataset } }) => {
-        if (window.confirm("Do you really want to delete?")) {
+        if (window.confirm('Do you really want to delete?')) {
           deletePost(dataset.id);
         }
       });

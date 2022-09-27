@@ -28,8 +28,6 @@
     "jest/prefer-to-have-length": "warn",
     "jest/valid-expect": "error",
     "import/no-cycle": "off",
-    "max-len": ["error", { "code": 200 }],
-    "commonjs": true, 
-    "amd": true
+    "max-len": ["error", { "code": 200 }]
   }
 }
