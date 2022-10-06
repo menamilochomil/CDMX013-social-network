@@ -10,6 +10,7 @@
 * [6. Hacker edition](#6-hacker-edition)
 * [7. Entrega](#7-entrega)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+* [9. Link de la app]
 
 ## 1. Preámbulo
 
@@ -517,3 +518,8 @@ Otras:
 * [Mobile First: el enfoque actual del diseño web móvil - 1and1](https://www.1and1.es/digitalguide/paginas-web/diseno-web/mobile-first-la-nueva-tendencia-del-diseno-web/)
 * [Mobile First - desarrolloweb.com](https://desarrolloweb.com/articulos/mobile-first-responsive.html)
 * [Mobile First Is NOT Mobile Only - Nielsen Norman Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
+
+## 9. Link de la app
+
+En este link podrán encontrar la applicación web desplegada con firebase:
+*[Women in tech](https://women-in-tech-a2721.web.app/)
