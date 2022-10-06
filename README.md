@@ -10,7 +10,7 @@
 * [6. Hacker edition](#6-hacker-edition)
 * [7. Entrega](#7-entrega)
 * [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
-* [9. Link de la app]
+* [9. Link de la app](#9-link-de-la-app)
 
 ## 1. Preámbulo
 
