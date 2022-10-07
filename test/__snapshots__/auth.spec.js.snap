@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The authentication of sign up Snapshot of sign up 1`] = `
+<div
+  class="container"
+>
+  <img
+    class="logoTech"
+    src="../imgs/logo.png"
+  />
+  <p
+    id="text"
+  >
+    Sing up
+  </p>
+  <div
+    class="containerInputs"
+  >
+    <input
+      class="inputs"
+      id="email"
+      placeholder="email@something.com"
+      type="email"
+    />
+    <input
+      class="inputs"
+      id="password"
+      placeholder="password"
+      type="password"
+    />
+    <input
+      class="inputs"
+      placeholder="Confirm your password"
+      type="password"
+    />
+    <p
+      class="errorMessage"
+    />
+    <p
+      id="congrats"
+    />
+    <button
+      class="purpleButton"
+      id="sign-up"
+    >
+      Sign Up
+    </button>
+    <p
+      id="pMessage"
+    >
+       By clicking “Sign up”, you agree to our terms of service, privacy policy and cookie policy.
+    </p>
+  </div>
+  <img
+    class="signUpIcon"
+    src="../imgs/Github.png"
+  />
+  <footer>
+    2022
+  </footer>
+</div>
+`;

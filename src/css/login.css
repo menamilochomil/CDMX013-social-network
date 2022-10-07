@@ -38,10 +38,7 @@
     color: white;
     font-size: 20px;
 }
-.purpleButton:hover {
-    box-shadow: 0.063rem 0.313rem 0.625rem #21244D;
-    cursor: pointer;
-}
+
 #pAccount{
     font-size: 12px;
 }
@@ -64,26 +61,4 @@
 .purpleButton:hover {
     box-shadow: 0.063rem 0.313rem 0.625rem #21244D;
     cursor: pointer;
-}
-
-#pAccount{
-    font-size: 12px;
-}
-
-#divAccount{
-    display: flex;
-    margin-top: 24px;
-}
-
-#signUpButton{
-    font-size: 11px;
-    color: #E350A8;
-    background: none;
-    border: none;
-    margin-bottom: 72px;
-    margin-left: 5px;
-}
-
-.loginIcon, .signUpIcon{
-    margin-top: 13px;
 }

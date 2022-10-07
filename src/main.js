@@ -1,10 +1,11 @@
+/* eslint-disable import/no-unresolved */
 // Este es el punto de entrada de tu aplicacion
+import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { start } from './components/start.js';
 import { login } from './components/login.js';
 import { signUp } from './components/sign-up.js';
 import { home } from './components/home.js';
 import { check } from './components/successCreateAccount.js';
-import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { auth } from './lib/firebase.js';
 
 const root = document.getElementById('root');
@@ -29,7 +30,7 @@ export const onNavigate = (pathname) => {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    onNavigate('/home')
+    onNavigate('/home');
     // const displayName = user.displayName;
     // const email = user.email;
     // const photoURL = user.photoURL;

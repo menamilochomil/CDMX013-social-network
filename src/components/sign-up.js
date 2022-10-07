@@ -1,4 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
+import { getAuth, createUserWithEmailAndPassword } from '../lib/imports.js';
 import { app } from '../lib/firebase.js';
 import { onNavigate } from '../main.js';
 import { githubLogin } from './github.js';
@@ -10,8 +12,6 @@ export const signUp = () => {
   const logo = document.createElement('img');
   const divInputs = document.createElement('div');
   const p = document.createElement('p');
-  const boxName = document.createElement('input');
-  const boxLastName = document.createElement('input');
   const boxEmail = document.createElement('input');
   const boxPassword = document.createElement('input');
   const boxConfirmPassword = document.createElement('input');
@@ -22,7 +22,7 @@ export const signUp = () => {
   const signUpGitHub = document.createElement('img');
   const signUpGoogle = document.createElement('img');
   const footer = document.createElement('footer');
-  
+
   const paraError = document.createElement('p');
   const paraCongrats = document.createElement('p');
 
@@ -31,18 +31,14 @@ export const signUp = () => {
   divInputs.setAttribute('class', 'containerInputs');
   p.textContent = 'Sing up';
   p.setAttribute('id', 'text');
-  boxName.setAttribute('type', 'text');
-  boxName.setAttribute('class', 'inputs');
-  boxName.placeholder = 'Write your name';
-  boxLastName.setAttribute('type', 'text');
-  boxLastName.setAttribute('class', 'inputs');
-  boxLastName.placeholder = 'Write your last name';
   boxEmail.setAttribute('type', 'email');
   boxEmail.placeholder = 'email@something.com';
   boxEmail.setAttribute('class', 'inputs');
+  boxEmail.setAttribute('id', 'email');
   boxPassword.setAttribute('type', 'password');
   boxPassword.placeholder = 'password';
   boxPassword.setAttribute('class', 'inputs');
+  boxPassword.setAttribute('id', 'password');
   boxConfirmPassword.setAttribute('type', 'password');
   boxConfirmPassword.placeholder = 'Confirm your password';
   boxConfirmPassword.setAttribute('class', 'inputs');
@@ -50,8 +46,9 @@ export const signUp = () => {
   pMessage.setAttribute('id', 'pMessage');
   signUpButton.textContent = 'Sign Up';
   signUpButton.setAttribute('class', 'purpleButton');
+  signUpButton.setAttribute('id', 'sign-up');
 
-  divInputs.append(boxName, boxLastName, boxEmail, boxPassword, boxConfirmPassword, paraError, paraCongrats, signUpButton, pMessage);
+  divInputs.append(boxEmail, boxPassword, boxConfirmPassword, paraError, paraCongrats, signUpButton, pMessage);
 
   sectionOr.src = '../imgs/sectionOr.png';
   signUpTwitter.src = '../imgs/Twitter.png';
@@ -64,21 +61,20 @@ export const signUp = () => {
   paraError.setAttribute('class', 'errorMessage');
   paraCongrats.setAttribute('id', 'congrats');
 
+  function congrats() {
+    onNavigate('/check');
+  }
+
   const createAccount = async () => {
-    const getName = boxName.value;
-    const getLastName = boxLastName.value;
     const signUpEmail = boxEmail.value;
     const signUpPassword = boxPassword.value;
     const confirmPasword = boxConfirmPassword.value;
 
     try {
       if (signUpPassword !== confirmPasword) throw Error('The password does not match');
-      const userCredencial = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword, confirmPasword, getName, getLastName);
+      const userCredencial = await createUserWithEmailAndPassword(auth, signUpEmail, signUpPassword, confirmPasword);
       const user = userCredencial.user;
       paraError.innerHTML = '';
-      function congrats() {
-        onNavigate('/check');
-      }
       setTimeout(congrats, 1000);
     } catch (error) {
       paraError.innerHTML = error;

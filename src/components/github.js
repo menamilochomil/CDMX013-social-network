@@ -1,6 +1,7 @@
+/* eslint-disable import/no-unresolved */
 import {
   getAuth, GithubAuthProvider, signInWithRedirect, getRedirectResult,
-} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
+} from '../lib/imports.js';
 import { app } from '../lib/firebase.js';
 import { onNavigate } from '../main.js';
 
@@ -13,10 +14,10 @@ export const githubLogin = () => {
     .then((result) => {
       const credential = GithubAuthProvider.credentialFromResult(result);
       if (credential) {
-        const token = result.credential.accessToken;
+        // const token = result.credential.accessToken;
         onNavigate('/home');
       }
-      const user = result.user;
+      // const user = result.user;
     })
     .catch((err) => {
       console.log(err);

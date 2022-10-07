@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/no-unresolved */
 import { getAuth, signInWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { onNavigate } from '../main.js';
 import { app } from '../lib/firebase.js';
@@ -29,7 +31,7 @@ export const login = () => {
   divInputs.setAttribute('class', 'containerInputs');
   p.textContent = 'Log in';
   p.setAttribute('class', 'text');
-  
+
   boxEmail.setAttribute('type', 'email');
   boxEmail.placeholder = 'email@something.com';
   boxEmail.setAttribute('class', 'inputs');
@@ -63,10 +65,10 @@ export const login = () => {
 
     try {
       const userCredencial = await signInWithEmailAndPassword(
-        auth, 
-        loginEmail, 
+        auth,
+        loginEmail,
         loginPassword,
-        );
+      );
       const user = userCredencial.user;
       onNavigate('/home');
     } catch (error) {
@@ -105,7 +107,7 @@ export const login = () => {
   });
 
   loginGoogle.addEventListener('click', googleAuth);
-  
+
   signUpButton.addEventListener('click', () => {
     onNavigate('/signUp');
   });
